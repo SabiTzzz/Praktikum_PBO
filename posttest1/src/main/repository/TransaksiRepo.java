@@ -25,8 +25,11 @@ public class TransaksiRepo {
 
     // Delete
     public void hapusTransaksi(int id) {
-        if (id >= 0 && id < transaksiList.size()) {
-            transaksiList.remove(id);
+        for (int i = 0; i < transaksiList.size(); i++) {
+            if (transaksiList.get(i).getId() == id) {
+                transaksiList.remove(i);
+                break;
+            }
         }
     }
 }
