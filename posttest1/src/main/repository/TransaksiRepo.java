@@ -18,8 +18,11 @@ public class TransaksiRepo {
 
     // Update
     public void updateTransaksi(int id, Transaksi transaksi) {
-        if (id >= 0 && id < transaksiList.size()) {
-            transaksiList.set(id, transaksi);
+        for (int i = 0; i < transaksiList.size(); i++) {
+            if (transaksiList.get(i).getId() == id) {
+                transaksiList.set(i, transaksi);
+                break;
+            }
         }
     }
 
