@@ -2,6 +2,7 @@ package com.mydompet.service;
 
 import com.mydompet.model.Pemasukan;
 import com.mydompet.model.Pengeluaran;
+import com.mydompet.model.Rutinan;
 import com.mydompet.model.Transaksi;
 import com.mydompet.repository.TransaksiRepo;
 
@@ -22,8 +23,10 @@ public class TransaksiService {
             transaksi = new Pemasukan(id, nominal, tanggal, keterangan, kategori);
         } else if ("Pengeluaran".equalsIgnoreCase(jenis)) {
             transaksi = new Pengeluaran(id, nominal, tanggal, keterangan, kategori);
+        } else if ("Rutinan".equalsIgnoreCase(jenis)) {
+            transaksi = new Rutinan(id, nominal, tanggal, keterangan, kategori);
         } else {
-            throw new IllegalArgumentException("Jenis transaksi tidak valid. Harus 'Pemasukan' atau 'Pengeluaran'.");
+            throw new IllegalArgumentException("Jenis transaksi tidak valid. Harus 'Pemasukan' atau 'Pengeluaran' atau 'Rutinan'.");
         }
         transaksiRepo.tambahTransaksi(transaksi);
     }
@@ -40,8 +43,10 @@ public class TransaksiService {
             transaksi = new Pemasukan(id, nominal, tanggal, keterangan, kategori);
         } else if ("Pengeluaran".equalsIgnoreCase(jenis)) {
             transaksi = new Pengeluaran(id, nominal, tanggal, keterangan, kategori);
+        } else if ("Rutinan".equalsIgnoreCase(jenis)) {
+            transaksi = new Rutinan(id, nominal, tanggal, keterangan, kategori);
         } else {
-            throw new IllegalArgumentException("Jenis transaksi tidak valid. Harus 'Pemasukan' atau 'Pengeluaran'.");
+            throw new IllegalArgumentException("Jenis transaksi tidak valid. Harus 'Pemasukan' atau 'Pengeluaran' atau 'Rutinan'.");
         }
         transaksiRepo.updateTransaksi(id, transaksi);
     }
