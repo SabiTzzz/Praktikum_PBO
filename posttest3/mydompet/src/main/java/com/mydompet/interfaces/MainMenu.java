@@ -187,7 +187,7 @@ public class MainMenu {
         String jenis;
         do {
             jenis = bacaInputString("Jenis ([1]Pemasukan/[2]Pengeluaran): ");
-            if (jenis.equals("1")) return " Pemasukan ";
+            if (jenis.equals("1")) return "Pemasukan";
             if (jenis.equals("2")) return "Pengeluaran";
             System.out.println("Jenis tidak valid. Silakan masukkan jenis yang benar.");
         } while (true);
