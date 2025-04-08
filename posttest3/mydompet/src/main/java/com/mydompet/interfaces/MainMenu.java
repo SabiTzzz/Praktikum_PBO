@@ -186,9 +186,10 @@ public class MainMenu {
     private String bacaJenisTransaksi() {
         String jenis;
         do {
-            jenis = bacaInputString("Jenis ([1]Pemasukan/[2]Pengeluaran): ");
+            jenis = bacaInputString("Jenis ([1]Pemasukan/[2]Pengeluaran/[3]Rutinan): ");
             if (jenis.equals("1")) return "Pemasukan";
             if (jenis.equals("2")) return "Pengeluaran";
+            if (jenis.equals("3")) return "Rutinan";
             System.out.println("Jenis tidak valid. Silakan masukkan jenis yang benar.");
         } while (true);
     }
